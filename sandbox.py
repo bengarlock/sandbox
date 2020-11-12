@@ -36,6 +36,32 @@ def find_single_dupe(array):
 
 #Given two arrays, 1,2,3,4,5 and 2,3,1,0,5 find which number is not present in the second array.
 
+def find_common_numbers(array1, array2):
+    common = []
+    for i in range(len(array1)):
+        if array1[i] in array2:
+            common.append(array1[i])
+    return list(set(common))
+
+#print(find_common_numbers(array1=[1,2,3,4,5], array2=[2,3,1,0,5]))
+#2,3,4
 
 
+#How do you find the second highest number in an integer array?
+def find_second_higest_number(array):
+    array.sort()
+    return array[-2]
 
+#print(find_second_higest_number([14,200,33,4,12,6,70,44,23,10]))
+
+
+#How to find all pairs in an array of integers whose sum is equal to the given number?
+def find_pair_sets(array, number):
+    pairs = []
+    for i in range(len(array)):
+        for j in range(i + 1, len(array)):
+            if array[i] + array[j] == number:
+                pairs.append([array[i], array[j]])
+    return pairs
+
+print(find_pair_sets(array=[2,4,6,8,10], number=10))
