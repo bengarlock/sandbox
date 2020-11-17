@@ -191,15 +191,48 @@ def alphabet_position(text):
 #print(alphabet_position("The sunset sets at twelve o' clock."))
 
 
+import operator
+def high(x):
+    word_array = x.split(' ')
+    obj = {}
+    for word in word_array:
+        value = 0
+        for letter in word:
+            value += ord(letter)-96
+            obj[word] = value
+    return max(obj, key=obj.get)
+
+#print(high('man i need a taxi up to ubud'))
+
+x = 'man i need a taxi up to ubud'
+
+#print(ord("b")-96)
 
 
+def to_camel_case(text):
+    if len(text) > 0:
+        cleaned_text = ''
+        for letter in text:
+            if not letter.isalpha():
+                letter = " "
+                cleaned_text += letter
+            else:
+                cleaned_text += letter
+        lower_text = cleaned_text.split(" ")
+        for word in lower_text:
+            word.capitalize()
+        first_word = lower_text[0]
+        remaining_words = lower_text[1:]
+        remaining_words_capitalized = ''
+        for word in remaining_words:
+            remaining_words_capitalized += word.capitalize()
+        return "{}{}".format(first_word, remaining_words_capitalized)
+    else:
+        return text
 
 
-
-
-
-
-
+print(to_camel_case('the-Stealth-Warrior'))
+print(to_camel_case("A-B-C"))
 
 
 
