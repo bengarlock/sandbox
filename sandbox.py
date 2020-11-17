@@ -155,3 +155,38 @@ def song_decoder(song):
 #print(song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"))
 #print(song_decoder("AWUBBWUBC"))
 
+
+def find_short(s):
+    return min(len(x) for x in s.split())
+
+
+
+print(find_short("bitcoin take over the world maybe who knows perhaps"))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
