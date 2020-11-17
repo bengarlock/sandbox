@@ -298,3 +298,18 @@ def duplicate_count(text):
 
 #print(duplicate_count("indivisibility"))
 #print(duplicate_count("abcdea"))
+
+
+def iq_test(numbers):
+    array = [int(i) for i in numbers.split(" ") if i.isnumeric()]
+    gid = [i % 2 for i in array]
+
+    if gid.count(0) > 1:
+        return gid.index(1) + 1
+    else:
+        return gid.index(0) + 1
+
+print(iq_test("2 4 7 8 10"))
+
+
+
