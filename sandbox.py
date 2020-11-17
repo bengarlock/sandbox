@@ -176,10 +176,21 @@ def likes(names):
     else:
         return "no one likes this"
 
-
-
-
 #print(likes(['Alex', 'Jacob']))
+
+
+def alphabet_position(text):
+    results = []
+    for letter in text:
+        try:
+            results.append([letter for letter in "abcdefghijklmnopqrstuvwxyz"].index(letter.lower()) + 1)
+        except:
+            pass
+    return ' '.join([str(i) for i in results])
+
+#print(alphabet_position("The sunset sets at twelve o' clock."))
+
+
 
 
 
