@@ -285,7 +285,16 @@ def duplicate_encode(word):
     counter = Counter(word)
     return ''.join(('(' if counter[c] == 1 else ')') for c in word)
 
-
 #print(duplicate_encode("recede"))
 #print(duplicate_encode("Success"))
 
+def duplicate_count(text):
+    d = dict(Counter(text.lower()))
+    count = 0
+    for key, value in d.items():
+        if value > 1:
+            count += 1
+    return count
+
+#print(duplicate_count("indivisibility"))
+#print(duplicate_count("abcdea"))
