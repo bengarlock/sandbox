@@ -1,3 +1,6 @@
+import math
+
+
 # does input contain a 3.4.5 triangle?
 def is_triangle(input):
     for i in range(len(input)):
@@ -83,7 +86,6 @@ def atbash(txt):
                 'v', 'w', 'x', 'y', 'z']
     encrypted_word = []
 
-
     for i in txt:
         if i.isupper():
             lower_case_letter = i.lower()
@@ -98,18 +100,58 @@ def atbash(txt):
     return ''.join(encrypted_word)
 
 
-#print(atbash("Christmas is the 25th of December"))
+# print(atbash("Christmas is the 25th of December"))
 
 
 def is_ascending(string):
+    string_array = list(string)
 
-    for i in range(len(string)):
-        for j in range(i + 1, len(string)):
-            for k in range(j + 1, len(string)):
-                if int(i) + 1 == int(j) and int(j) + 1 == int(k):
-                    return True
-
+    for i in range(len(string_array)):
+        array = string_array[i: i + 3]
+        for j in range(len(array)):
+            for k in range(j + 1, len(array)):
+                for l in range(k + 1, len(array)):
+                    if array[j + 1] == array[k] and array[k + 1] == array[l]:
+                        print(array[j + 1], array[k + 1], array[l])
     return False
 
 
-print(is_ascending("326325324323"))
+# print(is_ascending("32332432536"))
+
+
+def fizz_buzz(n):
+    if n % 2 == 0 and n >= 2 and n <= 5:
+        print("Not Weird")
+    elif n % 2 == 0 and n >= 6 and n <= 20:
+        print("Weird")
+    elif n % 2 == 0 and n > 20:
+        print("Not Weird")
+    else:
+        print("Weird")
+
+
+# print(fizz_buzz(15))
+
+def is_square(n):
+    if n < 0:
+        return False
+    elif math.sqrt(n).is_integer():
+        return True
+# is_square(26)
+
+def song_decoder(song):
+    split_slot = song.split("WUB")
+    if split_slot[0] == "":
+        split_slot.pop(0)
+    if split_slot[-1] == "":
+        split_slot.pop(-1)
+    final_string = ''
+    for word in split_slot:
+        if word != "":
+            final_string += word + " "
+    return final_string[0:len(final_string)-1]
+    # return " ".join(song.replace("WUB", " ").split())
+
+#print(song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"))
+#print(song_decoder("AWUBBWUBC"))
+
