@@ -231,13 +231,41 @@ def to_camel_case(text):
         return text
 
 
-print(to_camel_case('the-Stealth-Warrior'))
-print(to_camel_case("A-B-C"))
+#print(to_camel_case('the-Stealth-Warrior'))
+#print(to_camel_case("A-B-C"))
 
 
+import string
+
+def is_pangram(s):
+    alphabet = [i for i in "abcdefghijklmnopqrstuvwxyz"]
+    d = dict()
+    for letter in alphabet:
+        d[letter] = False
+        if letter in s.lower():
+            d[letter] = True
+    final_results = list(d.values())
+    if False in final_results:
+        return False
+    else:
+        return True
+
+#pangram = "ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ"
+#print(is_pangram(pangram))
 
 
+def unique_in_order(iterable):
+    results = []
+    prev = None
 
+    for char in iterable:
+        if char != prev:
+            results.append(char)
+            prev = char
+
+    return results
+
+#print(unique_in_order('AAAABBBCCDAABBB'))
 
 
 
