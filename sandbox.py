@@ -137,6 +137,8 @@ def is_square(n):
         return False
     elif math.sqrt(n).is_integer():
         return True
+
+
 # is_square(26)
 
 def song_decoder(song):
@@ -149,19 +151,19 @@ def song_decoder(song):
     for word in split_slot:
         if word != "":
             final_string += word + " "
-    return final_string[0:len(final_string)-1]
+    return final_string[0:len(final_string) - 1]
     # return " ".join(song.replace("WUB", " ").split())
 
-#print(song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"))
-#print(song_decoder("AWUBBWUBC"))
+
+# print(song_decoder("WUBWEWUBAREWUBWUBTHEWUBCHAMPIONSWUBMYWUBFRIENDWUB"))
+# print(song_decoder("AWUBBWUBC"))
 
 
 def find_short(s):
     return min(len(x) for x in s.split())
 
 
-
-#print(find_short("bitcoin take over the world maybe who knows perhaps"))
+# print(find_short("bitcoin take over the world maybe who knows perhaps"))
 
 
 def likes(names):
@@ -172,11 +174,12 @@ def likes(names):
     elif len(names) == 3:
         return names[0] + ', ' + names[1] + ', ' + ' and ' + names[2] + " like this"
     elif len(names) > 3:
-        return names[0] + ', ' + names[1] + ' and ' + str(len(names)-2) + " others like this"
+        return names[0] + ', ' + names[1] + ' and ' + str(len(names) - 2) + " others like this"
     else:
         return "no one likes this"
 
-#print(likes(['Alex', 'Jacob']))
+
+# print(likes(['Alex', 'Jacob']))
 
 
 def alphabet_position(text):
@@ -188,25 +191,30 @@ def alphabet_position(text):
             pass
     return ' '.join([str(i) for i in results])
 
-#print(alphabet_position("The sunset sets at twelve o' clock."))
+
+# print(alphabet_position("The sunset sets at twelve o' clock."))
 
 
 import operator
+
+
 def high(x):
     word_array = x.split(' ')
     obj = {}
     for word in word_array:
         value = 0
         for letter in word:
-            value += ord(letter)-96
+            value += ord(letter) - 96
             obj[word] = value
     return max(obj, key=obj.get)
 
-#print(high('man i need a taxi up to ubud'))
+
+# print(high('man i need a taxi up to ubud'))
 
 x = 'man i need a taxi up to ubud'
 
-#print(ord("b")-96)
+
+# print(ord("b")-96)
 
 
 def to_camel_case(text):
@@ -231,11 +239,12 @@ def to_camel_case(text):
         return text
 
 
-#print(to_camel_case('the-Stealth-Warrior'))
-#print(to_camel_case("A-B-C"))
+# print(to_camel_case('the-Stealth-Warrior'))
+# print(to_camel_case("A-B-C"))
 
 
 import string
+
 
 def is_pangram(s):
     alphabet = [i for i in "abcdefghijklmnopqrstuvwxyz"]
@@ -250,8 +259,9 @@ def is_pangram(s):
     else:
         return True
 
-#pangram = "ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ"
-#print(is_pangram(pangram))
+
+# pangram = "ABCD45EFGH,IJK,LMNOPQR56STUVW3XYZ"
+# print(is_pangram(pangram))
 
 
 def unique_in_order(iterable):
@@ -265,13 +275,17 @@ def unique_in_order(iterable):
 
     return results
 
-#print(unique_in_order('AAAABBBCCDAABBB'))
+
+# print(unique_in_order('AAAABBBCCDAABBB'))
+
+from collections import Counter
+
+def duplicate_encode(word):
+    word = word.lower()
+    counter = Counter(word)
+    return ''.join(('(' if counter[c] == 1 else ')') for c in word)
 
 
-
-
-
-
-
-
+#print(duplicate_encode("recede"))
+#print(duplicate_encode("Success"))
 
