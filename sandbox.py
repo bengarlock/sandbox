@@ -309,7 +309,55 @@ def iq_test(numbers):
     else:
         return gid.index(0) + 1
 
-print(iq_test("2 4 7 8 10"))
+#print(iq_test("2 4 7 8 10"))
+
+def tower_builder(n_floors):
+    result = []
+    count = 0
+    while count < n_floors:
+        star = "*" * count
+        space = ''
+        space_index = n_floors
+        while space_index > 0:
+            space += " " * (n_floors - (space_index - 1))
+            space_index -= 1
+
+        print(space + star + space)
+        count += 1
+
+#print(tower_builder(5))
 
 
+def reverse(x):
+    y = x[::-1]
+    int(y)
+    return y
 
+
+#print(reverse("-123"))
+
+
+def solution(n):
+    roman_numerals = {
+        1000: 'M',
+        900: 'CM',
+        500: 'D',
+        400: 'CD',
+        100: 'C',
+        90: 'XC',
+        50: 'L',
+        40: 'XL',
+        10: 'X',
+        9: 'IX',
+        5: 'V',
+        4: 'IV',
+        1: 'I'
+    }
+    roman_string = ''
+    for key in sorted(roman_numerals.keys(), reverse=True):
+        while n >= key:
+            roman_string += roman_numerals[key]
+            n -= key
+    return roman_string
+
+#print(solution(89))
