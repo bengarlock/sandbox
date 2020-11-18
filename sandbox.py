@@ -334,7 +334,7 @@ def reverse(x):
     return y
 
 
-print(reverse(-123))
+#print(reverse(-123))
 
 
 def solution(n):
@@ -361,3 +361,18 @@ def solution(n):
     return roman_string
 
 #print(solution(89))
+
+
+import re
+def pig_it(text):
+    array = text.split(" ")
+    results = []
+    for word in array:
+        if word.isalpha():
+            results.append("{}{}ay".format(word[1:], word[0]))
+        else:
+            results.append(word)
+    return " ".join(results)
+
+pig_it('Pig latin is cool!')
+
