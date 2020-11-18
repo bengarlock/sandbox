@@ -334,7 +334,7 @@ def reverse(x):
     return y
 
 
-#print(reverse("-123"))
+print(reverse(-123))
 
 
 def solution(n):
