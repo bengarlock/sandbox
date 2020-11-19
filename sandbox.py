@@ -280,13 +280,15 @@ def unique_in_order(iterable):
 
 from collections import Counter
 
+
 def duplicate_encode(word):
     word = word.lower()
     counter = Counter(word)
     return ''.join(('(' if counter[c] == 1 else ')') for c in word)
 
-#print(duplicate_encode("recede"))
-#print(duplicate_encode("Success"))
+
+# print(duplicate_encode("recede"))
+# print(duplicate_encode("Success"))
 
 def duplicate_count(text):
     d = dict(Counter(text.lower()))
@@ -296,8 +298,9 @@ def duplicate_count(text):
             count += 1
     return count
 
-#print(duplicate_count("indivisibility"))
-#print(duplicate_count("abcdea"))
+
+# print(duplicate_count("indivisibility"))
+# print(duplicate_count("abcdea"))
 
 
 def iq_test(numbers):
@@ -309,7 +312,8 @@ def iq_test(numbers):
     else:
         return gid.index(0) + 1
 
-#print(iq_test("2 4 7 8 10"))
+
+# print(iq_test("2 4 7 8 10"))
 
 def tower_builder(n_floors):
     result = []
@@ -325,7 +329,8 @@ def tower_builder(n_floors):
         print(space + star + space)
         count += 1
 
-#print(tower_builder(5))
+
+# print(tower_builder(5))
 
 
 def reverse(x):
@@ -334,7 +339,7 @@ def reverse(x):
     return y
 
 
-#print(reverse(-123))
+# print(reverse(-123))
 
 
 def solution(n):
@@ -360,10 +365,13 @@ def solution(n):
             n -= key
     return roman_string
 
-#print(solution(89))
+
+# print(solution(89))
 
 
 import re
+
+
 def pig_it(text):
     array = text.split(" ")
     results = []
@@ -373,6 +381,7 @@ def pig_it(text):
         else:
             results.append(word)
     return " ".join(results)
+
 
 pig_it('Pig latin is cool!')
 
@@ -388,6 +397,17 @@ def to_weird_case(string):
                 results.append(value)
         results.append(" ")
     final = "".join(results)
-    return final[0: len(final)-1]
+    return final[0: len(final) - 1]
 
-#print(to_weird_case('This is a test'))
+
+# print(to_weird_case('This is a test'))
+
+
+def increment_string(strng):
+    words = strng.rstrip('0123456789')
+    numbers = strng[len(words):]
+    if numbers == "" : return words + "1"
+    return words + str(int(numbers) + 1).zfill(len(numbers))
+
+
+#print(increment_string("foobar00"))
