@@ -409,5 +409,11 @@ def increment_string(strng):
     if numbers == "" : return words + "1"
     return words + str(int(numbers) + 1).zfill(len(numbers))
 
-
 #print(increment_string("foobar00"))
+
+def make_readable(seconds):
+    return "{0:0>2}:{1:0>2}:{2:0>2}".format(int(seconds / 3600), int((seconds % 3600) / 60), int((seconds % 3600) % 60))
+#print(make_readable(86399))
+
+
+
