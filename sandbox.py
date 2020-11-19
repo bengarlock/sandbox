@@ -376,3 +376,18 @@ def pig_it(text):
 
 pig_it('Pig latin is cool!')
 
+
+def to_weird_case(string):
+    array = string.split(" ")
+    results = []
+    for word in array:
+        for index, value in enumerate(word):
+            if index % 2 == 0:
+                results.append(value.upper())
+            else:
+                results.append(value)
+        results.append(" ")
+    final = "".join(results)
+    return final[0: len(final)-1]
+
+#print(to_weird_case('This is a test'))
